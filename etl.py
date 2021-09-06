@@ -29,10 +29,8 @@ def process_song_data(spark, input_data, output_data):
     
     # read song data file
     df = (spark.read
-    .options("inferSchema", True)
     .json(song_data)
     .dropDuplicates()
-    .cache()
     )
 
     # extract columns to create songs table
@@ -68,10 +66,8 @@ def process_log_data(spark, input_data, output_data):
 
     # read log data file
     df = (spark.read
-    .options("inferSchema", True)
     .json(log_data)
     .dropDuplicates()
-    .cache()
     )
     # filter by actions for song plays
     df = df.where(df.page == 'NextSong').cache()
@@ -135,7 +131,7 @@ def process_log_data(spark, input_data, output_data):
 def main():
     spark = create_spark_session()
     input_data = "s3a://udacity-dend/"
-    output_data = "data/output_data"
+    output_data = ""
     
     process_song_data(spark, input_data, output_data)    
     process_log_data(spark, input_data, output_data)
