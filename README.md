@@ -5,7 +5,7 @@
 ## Table of Contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
-* [Technologies and Libraries](#technologies-and-libraries)
+* [Technology and Libraries](#technologies-and-libraries)
 * [Project Setup](#project-setup)
 * [Contact](#contact)
 
